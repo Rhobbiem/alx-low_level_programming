@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <unist.h>
+#include <unistd.h>
 /**
  * main - Ac program that prints a line to stanadard error
  * Description: 'Simplifying UNIX'
