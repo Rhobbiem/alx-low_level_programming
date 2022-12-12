@@ -2,7 +2,7 @@
 /**
  * main - print out data sizes in type C
  * code rhobbiem
- * Return: 0
+ * Return; 0
 */
 int main(void)
 {
