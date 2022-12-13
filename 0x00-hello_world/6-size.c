@@ -5,13 +5,13 @@
  *
  * Description: 'Size is not grandeur, and territory does not make a nation'
  *
- * Return: 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
 {
 	char a;
-	int b;
+	int b;i
 	long int c;
 	long long int d;
 	float f;
