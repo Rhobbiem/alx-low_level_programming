@@ -1,22 +1,13 @@
 #include "main.c"
 
 /**
- * print alphabet - prints the alphabet
- *
- * Description: print the alphabet in lower case followed by a new line
+ * main - print 10 times
  *
  * Return: Always 0
  */
 
 int main(void)
 {
-	char letter = 'a';
-
-	while (letter <= 'z')
-	{
-		_putchar(letter);
-		letter++;
-	}
-
-	_putchar('\n');
+	print_alphabet_x10();
+	return (0);
 }
