@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * string_toupper - change lowercase to uppercase
- * @s:string
- * Return:char
+ * @s: string
+ * Return: char
  * Rhobbiem
  */
 char *string_toupper(char *s)
