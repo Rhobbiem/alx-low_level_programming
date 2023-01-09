@@ -3,7 +3,6 @@
  * _puts_recursion - function like puts();
  * @s: input
  * Return: Always 0 (success)
- * done by Rhobbiem
  */
 void _puts_recursion(char *s)
 {
