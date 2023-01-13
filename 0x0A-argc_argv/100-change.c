@@ -1,51 +1,61 @@
-#include <main.h>
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-/*
- * main - function
- * @argc: length of argv
- * @argv: number of argument
- * Return: Always 0
- */
+#include <ctype.h>
 
-int main(int argc, char *argv[])
+/**
+* main - prints the minumin number of coins for perfect change
+* @argc: number of arguments
+* @argv: the vector that hold the arguments
+*
+* Description: using arc and argv to achieve the intended function
+* Return: returns 0 if it works or something else if error
+* A: if argc does not have only 2 arguments or if the
+*	second argument is not a digit
+* B: turn the whole number into an int, then subtract
+*	25, 10, 5, 2, and 1. till no more. increase counter and return it
+* C: checks if any non digits in the string.
+*/
+
+int main(int argc, char **argv)
 {
-/*Declaring variables*/
-		int position, total, change, aux;
-		int coins[] = {25, 10, 5, 2, 1}; /*Array int*/
+	int number;
+	int count = 0;
 
-	position = total = change = aux = 0;
-
-		if (argc != 2)
-		{
+	if (argc != 2)/* A */
+	{
 		printf("Error\n");
 		return (1);
-		}
-
-	total = atoi(argv[1]); /*Covert str to int*/
-
-		if (total <= 0)
-		{
-		printf("0\n");
-		return (0);
-		}
-
-/*Declaring While*/
-
-		while (coins[position] != '\0')
-
-		{
-		if (total >= coins[position])
-		}
-		aux = (total / coins[position]);
-		change += aux;
-		total -= coins[position] * aux;
-		}
-
-	position++;
-
 	}
-
-	printf("%d\n", change);
+	number = atoi(argv[1]);
+	while (number > 0)
+	{
+		while (number >= 25)
+		{
+			number -= 25;
+			count++;
+		}
+		while (number >= 10)
+		{
+			number -= 10;
+			count++;
+		}
+		while (number >= 5)
+		{
+			number -= 5;
+			count++;
+		}
+		while (number >= 2)
+		{
+			number -= 2;
+			count++;
+		}
+		while (number >= 1)
+		{
+			number -= 1;
+			count++;
+		}
+	}
+	printf("%d\n", count);
 	return (0);
 }
