@@ -1,5 +1,3 @@
- 3-array_range.c
-
 #include "main.h"
 #include <stdlib.h>
 /**
