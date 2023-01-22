@@ -1,27 +1,30 @@
-fndef _DOG_H
-#define _DOG_H
+#ifndef DOG
+#define DOG
 
 /**
- * struct dog - a new type
+ * struct dog - dog class
  *
- * @name: the name of the dog (Poppy)
- * @age: the age of the dog (3.5)
- * @owner: the name of the owner (Bob)
+ * @name: Name of the dog
+ *
+ * @age: Age of the dog
+ *
+ * @owner: Owner of the dog
  */
-typedef struct dog
+
+struct dog
 {
-		char *name;
-			float age;
-				char *owner;
-}
-	dog;
-	/*task three, new type dog_t as new name of strcut dog */
-	typedef struct dog dog_t;
+	char *name;
+	float age;
+	char *owner;
+};
 
-	int _putchar(char c);
-	void init_dog(struct dog *d, char *name, float age, char *owner);
-	void print_dog(struct dog *d);
-	dog_t *new_dog(char *name, float age, char *owner);
-	void free_dog(dog_t *d);
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
-#endif /* DOG */
+typedef struct dog dog_t;
+
+dog_t *new_dog(char *name, float age, char *owner);
+
+void free_dog(dog_t *d);
+
+#endif
