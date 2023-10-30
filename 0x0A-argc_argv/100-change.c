@@ -1,61 +1,40 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
-* main - prints the minumin number of coins for perfect change
-* @argc: number of arguments
-* @argv: the vector that hold the arguments
-*
-* Description: using arc and argv to achieve the intended function
-* Return: returns 0 if it works or something else if error
-* A: if argc does not have only 2 arguments or if the
-*	second argument is not a digit
-* B: turn the whole number into an int, then subtract
-*	25, 10, 5, 2, and 1. till no more. increase counter and return it
-* C: checks if any non digits in the string.
-*/
+ * main - prints the minimum number of coins to make change for an amount.
+ * of money.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
+ */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int number;
-	int count = 0;
+	int cents, ncoins = 0;
 
-	if (argc != 2)/* A */
+	if (argc == 1 || argc > 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	number = atoi(argv[1]);
-	while (number > 0)
+
+	cents = atoi(argv[1]);
+
+	while (cents > 0)
 	{
-		while (number >= 25)
-		{
-			number -= 25;
-			count++;
-		}
-		while (number >= 10)
-		{
-			number -= 10;
-			count++;
-		}
-		while (number >= 5)
-		{
-			number -= 5;
-			count++;
-		}
-		while (number >= 2)
-		{
-			number -= 2;
-			count++;
-		}
-		while (number >= 1)
-		{
-			number -= 1;
-			count++;
-		}
+		if (cents >= 25)
+			cents -= 25;
+		else if (cents >= 10)
+			cents -= 10;
+		else if (cents >= 5)
+			cents -= 5;
+		else if (cents >= 2)
+			cents -= 2;
+		else if (cents >= 1)
+			cents -= 1;
+		ncoins += 1;
 	}
-	printf("%d\n", count);
+	printf("%d\n", ncoins);
 	return (0);
 }
